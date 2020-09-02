@@ -17,16 +17,22 @@ function add_to_cart(id)
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
 
+	alert('Items in your cart: ' + cart_get_number_of_items());
+
 }
 
-function showtotal()
+function cart_get_number_of_items()
 {
-	total = 0
-for(var i=0, len=localStorage.length; i<len; i++) {
-    var key = localStorage.key(i);
-    var value = localStorage[key];
-    total = total * 1 + value * 1;
+	var cnt = 0;
+	for(var i = 0; i < window.localStorage.length; i++)
+		{
+			var key = window.localStorage.key(i);
+			var value = window.localStorage.getItem(key);
 
-}
-alert('Total: ' + total);
+			if(key.indexOf('product_') == 0)
+			{
+				cnt = cnt + value * 1;
+			}
+		}
+		return cnt;
 }
