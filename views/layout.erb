@@ -16,6 +16,13 @@
 
 		<script src="moment.js"></script>
 
+		<script type="text/javascript">
+$(function() {
+    update_orders_input();
+    update_orders_button()
+});
+</script>
+
 		
 
 		
@@ -59,7 +66,7 @@
 			    	<li>
 			    		<form action="/cart" method="post">
 			    		<input id="orders_input" name="orders" type="hidden" value="">
-			    		<input type="submit" class="btn btn-primary btn-lg" value="Cart (...)" />
+			    		<input id="orders_button" type="submit" class="btn btn-primary btn-lg" value="Cart (...)" />
 			    		</form>
 			    	</li>
 			    </ul>
