@@ -104,7 +104,7 @@ post '/order' do
 
   @c = Client.new params[:client]
   if @c.save
-    @clients = Client.all
+    @clients = Client.all.order('created_at DESC')
     erb :order
   else
     @error = @c.errors.full_messages.first
