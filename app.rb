@@ -104,7 +104,8 @@ post '/order' do
 
   @c = Client.new params[:client]
   if @c.save
-    erb "<h2>Thank you for your order!</h2>"
+    @clients = Client.all
+    erb :order
   else
     @error = @c.errors.full_messages.first
     

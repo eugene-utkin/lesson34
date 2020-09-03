@@ -1,0 +1,24 @@
+<h2>Thank you for your order!</h2>
+<br />
+<br />
+<h4>All orders!</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Adress</th>
+      <th scope="col">Order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.phone %></td>
+      <td><%= item.adress %></td>
+      <td><%= item.order %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
